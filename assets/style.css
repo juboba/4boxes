@@ -1,0 +1,28 @@
+.box {
+    align-items: center;
+    background-color: red;
+    border: 1px solid;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    font-size: 4rem;
+    justify-content: center;
+    padding: 10px;
+    width: 50%;
+}
+
+.box.active {
+    background-color: black;
+    color: red;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.row {
+    display: flex;
+    height: 50%;
+}

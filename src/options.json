@@ -1,0 +1,46 @@
+[
+    {
+        "index": 0,
+        "image": "https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Findianapublicmedia.org%2Fstateimpact%2Ffiles%2F2013%2F01%2Fapple-image.jpg&f=1&nofb=1",
+        "text": "Manzana",
+        "options": [
+            {
+                "index": 0,
+                "image": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwholesale.heartlandvapes.com%2Fmedia%2Fcatalog%2Fproduct%2Fcache%2F2%2Fimage%2F800x800%2F3a9e366d1177e2f98d7ae0709f7d6caf%2Fp%2Fe%2Fpear-flavoring_3.jpg&f=1&nofb=1",
+                "text": "Pera"
+            },
+            {
+                "index": 1,
+                "image": "https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.lavanguardia.com%2Fr%2FGODO%2FLV%2Fp3%2FWebSite%2F2016%2F11%2F25%2FRecortada%2FLV_20150513_LV_FOTOS_D_54431215467-kB5G--656x655%40LaVanguardia-Web.jpg&f=1&nofb=1",
+                "text": "Granada",
+                "options": [
+                    {
+                        "index": 0,
+                        "image": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwholesale.heartlandvapes.com%2Fmedia%2Fcatalog%2Fproduct%2Fcache%2F2%2Fimage%2F800x800%2F3a9e366d1177e2f98d7ae0709f7d6caf%2Fp%2Fe%2Fpear-flavoring_3.jpg&f=1&nofb=1",
+                        "text": "Ultimo"
+                    },
+                    {
+                        "index": 1,
+                        "image": "https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.lavanguardia.com%2Fr%2FGODO%2FLV%2Fp3%2FWebSite%2F2016%2F11%2F25%2FRecortada%2FLV_20150513_LV_FOTOS_D_54431215467-kB5G--656x655%40LaVanguardia-Web.jpg&f=1&nofb=1",
+                        "text": "Primero"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "index": 1,
+        "image": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwholesale.heartlandvapes.com%2Fmedia%2Fcatalog%2Fproduct%2Fcache%2F2%2Fimage%2F800x800%2F3a9e366d1177e2f98d7ae0709f7d6caf%2Fp%2Fe%2Fpear-flavoring_3.jpg&f=1&nofb=1",
+        "text": "Pera"
+    },
+    {
+        "index": 2,
+        "image": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.mariowiki.com%2Fimages%2Fthumb%2F1%2F17%2FBananaDKCR.png%2F200px-BananaDKCR.png&f=1&nofb=1",
+        "text": "Plátano"
+    },
+    {
+        "index": 3,
+        "image": "https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.lavanguardia.com%2Fr%2FGODO%2FLV%2Fp3%2FWebSite%2F2016%2F11%2F25%2FRecortada%2FLV_20150513_LV_FOTOS_D_54431215467-kB5G--656x655%40LaVanguardia-Web.jpg&f=1&nofb=1",
+        "text": "Granada"
+    }
+]
