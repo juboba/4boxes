@@ -1,7 +1,7 @@
 import { html } from '../services/render'
 
-const Box = ({ active, image, children }) => {
-    const classes = active ? "active box" : "box"
+const Card = ({ active, image, children }) => {
+    const classes = active ? "active card" : "card"
 
     return html `<div class="${classes}">
                    ${image && html `<img width="250" src="${image}" />`}
@@ -9,6 +9,6 @@ const Box = ({ active, image, children }) => {
                  </div>`
 }
 
-Box.propTypes = {}
+Card.propTypes = {}
 
-export default Box
+export default Card

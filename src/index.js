@@ -1,54 +1,40 @@
 import { render } from 'preact'
-import { useRef, useState } from 'preact/hooks'
+import { useEffect, useRef, useState } from 'preact/hooks'
 import { html } from './services/render'
 import { splitEvery } from './utils'
-import Box from './components/Box'
-import useCycleClick from './hooks/useCycleClick'
+import Card from './components/Card'
 import options from './options.json'
+import { OptionProvider } from './services/options'
+import Config from './components/Config'
+import Cards from './components/Cards'
 
 const ROWS = 2
 
 const App = () => {
-    const [boxes, setBoxes] = useState(options)
-    const history = useRef([])
-    const hasBack = boxes !== options
+    const [page, setPage] = useState('config')
 
-    const { active } = useCycleClick((index) => {
-        if (!boxes[index]) {
-            const head = history.current.pop()
-            setBoxes(head ? head : options)
-            return
-        }
+    const goToCards = (e) => {
+        e.stopPropagation()
+        setPage('cards')
+    }
 
-        console.log('Escogió:', boxes[index].text)
+    const goToConfig = (e) => {
+        e.stopPropagation()
+        setPage('config')
+    }
 
-        if (boxes[index].options){
-            history.current.push(boxes)
-            setBoxes(boxes[index].options)
-        }
-    }, hasBack ? boxes.length + 1 : boxes.length, 0.9)
+    if (page === 'config') {
+        return html `
+                <${OptionProvider}>
+                    <${Config} onBack=${goToCards}/>
+                </${OptionProvider}>
+                `
+    }
 
-    return html `<div class="container">
-                    ${splitEvery(ROWS, boxes).map(row => html `
-                        <div class="row">
-                            ${row.map(box => {
-                                return html `<${Box}
-                                               active="${box.index === active}"
-                                               image="${box.image}">
-                                                 ${box.text}
-                                             </${Box}>` })}
-                        </div>
-                    `)}
-                    ${
-                    hasBack && html`
-                                    <div class="row">
-                                        <${Box} active="${boxes.length === active}">
-                                        Volver
-                                        </${Box}>
-                                    </div>
-                        `
-                    }
-                 </div>`
+    return html `<${OptionProvider}>
+                    <button class="button" onClick=${goToConfig}>Opciones</button>
+                    <${Cards}/>
+                 </${OptionProvider}>`
 }
 
 render(html `<${App} />`, document.querySelector('#app'))
