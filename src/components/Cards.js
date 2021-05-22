@@ -3,10 +3,10 @@ import { html } from '../services/render'
 import { splitEvery } from '../utils'
 import Card from './Card'
 import useCycleClick from '../hooks/useCycleClick'
-import { useOptions } from '../services/options'
+import { useConfig } from '../services/options'
 
 const Cards = () => {
-    const { options: cards } = useOptions()
+    const { options: cards, timeout } = useConfig()
     const history = useRef([])
 
     const { active } = useCycleClick((index) => {
@@ -14,7 +14,7 @@ const Cards = () => {
             alert(`Escogió: ${cards[index].text}`)
         }
 
-    }, cards.length, 1)
+    }, cards.length, timeout)
 
     return html `<div class="container">
                      ${cards.map((card, index) => {

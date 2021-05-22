@@ -3,6 +3,7 @@
     "htm": "^3.0.4",
     "parcel-bundler": "^1.12.4",
     "preact": "^10.5.12",
+    "ramda": "^0.27.1",
     "react": "^17.0.1",
     "services": "^0.0.3"
   },

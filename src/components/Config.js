@@ -1,13 +1,13 @@
 import { html } from '../services/render'
 import { useState } from 'preact/hooks'
-import { useOptions } from '../services/options'
+import { useConfig } from '../services/options'
 
 const emptyState = {
     imageUrl: '',
     text: ''
 }
 
-const truncate = (length, string) => string.length > length ? `${string.slice(0, length - 3)}...` : string
+const truncateAt = length => string => string.length > length ? `${string.slice(0, length - 3)}...` : string
 
 const OptionForm = ({ onSave }) => {
     const [state, setState] = useState(emptyState)
@@ -46,12 +46,11 @@ size="50"
 }
 
 const Config = ({ onBack }) => {
-    const { add, options, remove }  = useOptions()
-    console.log(options)
+    const { addOption, options, removeOption, timeout, setTimeout }  = useConfig()
 
     return html `<div>
-                    <h1>Opciones</h1>
-                    <${OptionForm} onSave=${add}/>
+                    <h2>Opciones</h2>
+                    ${options.length < 4 && html `<${OptionForm} onSave=${addOption}/>`}
                     <table class="card-table">
                         <thead>
                             <tr>
@@ -63,16 +62,23 @@ const Config = ({ onBack }) => {
                         ${options.map((option, index) => html`
                                 <tr>
                                     <td>
-                                        ${truncate(30, option.imageUrl)}
+                                        ${truncateAt (50) (option.imageUrl)}
                                     </td>
                                     <td>
                                         ${option.text}
                                     </td>
                                     <td>
-                                        <button onClick=${() => remove(index)}>eliminar</button>
+                                        <button onClick=${() => removeOption(index)}>eliminar</button>
                                     </td>
                                 </tr>`)}
                     </table>
+                    <b>Tiempo</b> <i style="margin-right: 3px;">(seg.)</i>
+                    <input
+                        type="text"
+                        onChange=${({ target }) => setTimeout(target.value)} value=${timeout}
+                        size="3"
+                    />
+                    <hr/>
                     <button onClick=${onBack}>mostrar</button>
                 </div>`
 }
