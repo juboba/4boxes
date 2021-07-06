@@ -11,7 +11,7 @@ const Cards = () => {
 
     const { active } = useCycleClick((index) => {
         if (cards[index]) {
-            alert(`Escogió: ${cards[index].text}`)
+          window.location = cards[index].url
         }
 
     }, cards.length, timeout)

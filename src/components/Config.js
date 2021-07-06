@@ -4,6 +4,7 @@ import { useConfig } from '../services/options'
 
 const emptyState = {
     imageUrl: '',
+    url: '',
     text: ''
 }
 
@@ -33,6 +34,12 @@ const OptionForm = ({ onSave }) => {
                     placeholder="URL de Imagen"
 size="50"
                     value=${state.imageUrl}
+                />
+                <input
+                    type="text"
+                    onChange=${mergeWithState('url')}
+                    placeholder="URL"
+                    value=${state.url}
                 />
                 <input
                     type="text"
